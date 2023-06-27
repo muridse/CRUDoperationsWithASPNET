@@ -25,6 +25,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Products</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -32,6 +35,20 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            @if (TempData["successMessage"] != null)
+            {
+                <div class="alert alert-success">
+                    <b>Success: </b>@TempData["successMessage"]
+                    <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
+                </div>
+            }
+            @if (TempData["errorMessage"] != null)
+            {
+                <div class="alert alert-dunger">
+                    <b>Error: </b>@TempData["errorMessage"]
+                    <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
+                </div>
+            }
             @RenderBody()
         </main>
     </div>
