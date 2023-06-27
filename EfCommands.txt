@@ -1,0 +1,3 @@
+﻿БД поднята в контейнере, поэтому данные слетают при каждом его перезапуске, можно исправить выводом данных бд наружу, но таков мой путь
+dotnet ef migrations add InitialCreateFix --project ..\CRUDOperationsWithASPNET.Core --startup-project ..\CRUDOperationsWithASPNET
+dotnet ef database update
